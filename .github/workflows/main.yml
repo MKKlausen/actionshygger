@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Build]
     permissions:
-      packages: writer
+      packages: write
     steps: 
       - name: Dowload artifact
         uses: actions/download-artifact@v4
