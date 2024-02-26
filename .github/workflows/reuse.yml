@@ -8,8 +8,6 @@ jobs:
   use_output:
     runs-on: ubuntu-latest
     needs: [call_workflow]
-    outputs:
-      something: ${{ needs.call_workflow.outputs.current_time }}
     steps:
     - name: Echo time
-      run: echo something
+      run: bash echo "${{ needs.call_workflow.outputs.current_time }}"
