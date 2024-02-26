@@ -8,15 +8,15 @@ on:
         required: true
         type: string
     outputs:
-      current_time: ${{ jobs.reusable-job.outputs.current_time }}
+      current-time: ${{ jobs.reusable-job.outputs.current-time }}
 jobs:
   reusable-job:
     runs-on: ubuntu-latest
     outputs:
-      current_time: ${{ steps.time.outputs.time }}
+      current-time: ${{ steps.time.outputs.time }}
     steps:
        - name: Echo Hello
-         run: bash echo "Hello ${{ inputs.who-to-greet }}"
+         run: echo "Hello ${{ inputs.who-to-greet }}"
        - name: Set time
          id: time
-         run: bash echo "time=$(date)" >> "$GITHUB_OUTPUT"
+         run: echo "time=$(date)" >> $GITHUB_OUTPUT
