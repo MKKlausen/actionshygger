@@ -1,5 +1,5 @@
 name: Reuse
-on: workflow_dispatch
+on: [workflow_dispatch]
 jobs:
   call_workflow:
     uses: './.github/workflows/reusable.yml'
