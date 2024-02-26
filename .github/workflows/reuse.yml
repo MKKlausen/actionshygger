@@ -10,4 +10,4 @@ jobs:
     needs: [call_workflow]
     steps:
     - name: Echo time
-      run: bash echo "${{ needs.call_workflow.outputs.current_time }}"
+      run: echo "${{ needs.call_workflow.outputs.current_time }}"
